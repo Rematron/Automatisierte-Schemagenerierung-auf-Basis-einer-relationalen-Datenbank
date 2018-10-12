@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="ISO-8859-1" standalone="no"?>
+<MAIN>
+	<BATCH TYPE="PRODUCT">
+		<COMPANY>1</COMPANY>
+		<BATCH_NO>130</BATCH_NO>
+		<PRODUCT_LIST>
+			<ARTICLE_NO>50</ARTICLE_NO>       
+			<STOCK_NO>1</STOCK_NO>
+			<QUANTITY>1</QUANTITY>
+			<UNIT>Stk</UNIT>
+		</PRODUCT_LIST>
+	</BATCH>
+</MAIN>
