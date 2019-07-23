@@ -1,4 +1,23 @@
 \chapter{Stand der Technik}
 \label{cha:technikstand}
+Auf dem Markt gibt es eine Vielzahl von Systemen die eine automatisierte XML Schemagenerierung anbieten.
+Als Basis zur Generierung gibt es zum Beispiel bestehende Tabellen einer relationalen Datenbank, oder ein bestehendes XML Dokument mit allen möglichen XML-Elementen. 
+
 
 \section{SQL-Server}
+Als Beispiel genauer betrachtet wird hier die Lösung von Microsoft \cite{SqlServer}. Seit SQL Server 2008 unterstützt Microsoft die Generierung von XML Schema. Dabei ist hier die Generierung nicht auf eine einzige Tabelle beschränkt, sondern kann beliebig über eine SELECT-Statement angegeben werden. 
+Mithilfe des Schlüsselworts FOR XMLSCHEMA wird aufgrund der ausgewählten Spalten im Ergebnis eine Schema generiert.
+Dabei ist auch eine Kombination von Schema und des dazugehörigen XML Dokuments möglich.
+
+\section{Umsetzungen der TU Wien}
+Auch bei der Umsetzung einer Magisterarbeit an der TU Wien wurde ein interessanter Lösungsansatz gewählt.
+In Zusammenarbeit mit der Krankenanstalt Klagenfurt wurde dabei ein normierter Pflegeentlassungsbericht in einem CDA-System (Clinical Document Architecture) für die elektronische Kommunikation in ein XML Format umgewandelt.
+Wagner zeigt in seiner Arbeit \cite{Wagner2007} wie er die Daten klassifiziert und damit ein Datenmodell erzeugt, aus dem schließlich eine XSD-Datei zur Validierung gewonnen werden kann.
+
+\section{XML-Schema nach relationaler Datenbank}
+Varlarmis und Vazirgiannis \cite{Varlamis2001BridgingXA} haben bereits gezeigt, dass es mit einer Anreicherung der Struktur eines XML-Schemas möglich ist, relationale Datenbanken zu generieren und zu manipulieren. Dabei wurden die Datenbank-Befehle in XML-Elementen aufgeteilt. 
+
+\section{Fehlende Funktionen}
+Der Datenaufbau bei \BMD ist für den SQL Server oder ähnlichen Produkten leider zu komplex.
+Die Einträge in den Tabellen könnten zwar so manipuliert werden, dass diese einer Spalte in dem Ergebnis widerspiegeln, jedoch würde der Datentyp nicht zu dem jeweiligen Feld passen. Hier liegen mehrere Tabellen im Hintergrund, die den Datentypen, die Bereichswerte und die Darstellung im Programm widerspiegeln. 
+Gleichzeitig wäre eine explizite Anpassung an mehrere Datenbanksystemen notwendig, da \BMD sowohl Microsoft SQL Server, als auch Oracle unterstützt.

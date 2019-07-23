@@ -1,0 +1,5 @@
+<xs:element name="Produkt" type="ProduktType">
+    <xs:alternative test="@toleranz eq 'Tol1'" type="Tol1Type"/>
+    <xs:alternative test="@toleranz eq 'Tol2'" type="Tol2Type"/>
+    <xs:alternative type="xs:error"/>
+</xs:element>

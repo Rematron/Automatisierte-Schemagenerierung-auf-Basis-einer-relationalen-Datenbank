@@ -8,6 +8,7 @@
 %%%----------------------------------------------------------
 
 \usepackage[utf8]{inputenc}		% Bei der Verw. von lualatex oder xelatex entfernen!
+\usepackage{pdfpages}
 
 \graphicspath{{images/}}    % Abbildungsverzeichnis
 \logofile{logo}				% Name des Logo-PDFs in images/ (\logofile{}, wenn kein Logo gewünscht)
@@ -26,10 +27,10 @@
 
 %%% Zusätzlich für eine Bachelorarbeit: ---------------------
 \nummer{1610307032}   % Stud-ID, z.B. 1310238045-A  
-% (A = 1. Bachelorarbeit)
-\semester{Wintersemester 2018} 
-\gegenstand{Semistrukturierte Datenmodellierung und XML } 
-\betreuerin{Barbara~Traxler, MSc.} % oder \betreuerin{..}
+% (A = 1. Bachelorarbeit)%
+%\semester{Wintersemester 2018} 
+%\gegenstand{Semistrukturierte Datenmodellierung und XML } 
+%\betreuerin{Barbara~Traxler, MSc.} % oder \betreuerin{..}
 
 %%% Restriktive Lizenformel anstatt CC (nur für Typ master) -
 %\strictlicense
@@ -42,24 +43,27 @@
 \frontmatter                    % Titelei (röm. Seitenzahlen)
 %%%----------------------------------------------------------
 
-\maketitle
+\includepdf[pages={1-}]{Titelblatt}
+% \maketitle
 \tableofcontents
 
 %%\include{front/vorwort} % Optional. Ggf. weglassen
-%%\include{front/kurzfassung}		
-%%\include{front/abstract}			
+\include{front/kurzfassung}		
+\include{front/abstract}			
 
 %%%----------------------------------------------------------
 \mainmatter          % Hauptteil (ab hier arab. Seitenzahlen)
 %%%----------------------------------------------------------
 
 \include{chapters/einleitung}
-\include{chapters/bmd}
 \include{chapters/technikstand}
 \include{chapters/schema}
 \include{chapters/schematron}
+\include{chapters/design}
+\include{chapters/bmd}
 \include{chapters/implementierung}
-\include{chapters/ausblick}
+\include{chapters/ergebnisse}
+\include{chapters/schluss}
 % \include{chapters/literatur}
 %%\include{chapters/abschlussarbeit}
 %%\include{chapters/latex}
@@ -67,23 +71,18 @@
 %%\include{chapters/mathematik}
 %%\include{chapters/literatur}
 %%\include{chapters/drucken}
-%%\include{chapters/schluss}
 
 %%%----------------------------------------------------------
 \appendix                                            % Anhang 
 %%%----------------------------------------------------------
-
-%%\include{back/anhang_a}	% Technische Ergänzungen
-%%\include{back/anhang_b}	% Inhalt der CD-ROM/DVD
-%%\include{back/anhang_c}	% Chronologische Liste der Änderungen
-%%\include{back/anhang_d}	% Quelltext dieses Dokuments
+\include{back/anhang}	% Quelltext dieses Dokuments
 
 %%%----------------------------------------------------------
 \MakeBibliography                        % Quellenverzeichnis
 %%%----------------------------------------------------------
 
 %%% Messbox zur Druckkontrolle ------------------------------
-%%\include{back/messbox}
+% \include{back/messbox}
 
 %%%----------------------------------------------------------
 \end{document}

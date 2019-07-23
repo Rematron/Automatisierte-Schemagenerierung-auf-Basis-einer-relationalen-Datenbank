@@ -1,8 +1,136 @@
 \chapter{XML Schema}
 \label{cha:Schema}
+XML Schema ist eine Sprache zur Beschreibung von XML Dokumenten. Sie bietet eine Vielzahl von Konstrukten um komplexe Strukturen abbilden zu können und die Integrität eines XML Dokuments sicher zu stellen.
 
 \section{Aufbau}
+Ein XML Schema wird im XML Syntax geschrieben und ist deswegen gut strukturiert und leicht lesbar.
+Neben bereits vordefinierten Datentypen für Text, Zahlen und Datum können auch eigene Datentypen definiert werden. Für die Beschreibung des Datentypen kann das \emph{xsd:attribute}-Element verwendet werden. Diese bietet vordefinierte Typen wie \emph{xsd:integer} und \emph{xsd:string}. Mehr dazu in \cite{Wheeler2011}.
+
+Wie Madhavan \cite{Madhavan2001} beschreibt, kann man mit mit XSD eigene Datentypen definieren und diese auch in eigenen Namensräumen deklariert werden. Somit kann jeder Datentyp genau identifiziert werden, und es kommt zu keiner Kollision mit den gewählten Bezeichnungen.
+Auch sind Lösungen zur Wiederverwendung von bereits definierten Typen vorhanden. Dies ermöglicht eine bessere Wartbarkeit und verhindert Redundanzen und Fehler in den Beschreibungen.
+
+Dabei unterscheidet man die Datentypen in 2 verschiedene Typen:
+
+\begin{enumerate}
+\item \textbf{Einfacher Datentyp}: Wird verwendet um Einschränkungen, Kombination oder Listen von definierten Typen zu realisieren. Die Bezeichnung des Elements lautet \emph{simpleType}, siehe Abbildung \ref{fig:simpleTypeExp}.
+\item \textbf{Komplexer Datentyp}: Wird verwendet um Sub-Elemente und Attribute zu definieren. Dabei ist auch die Verschachtelung von komplexen Datentypen zulässig. Die Bezeichnung des Elements lautet \emph{complexType}. Siehe Beispiel XML-Datei \ref{fig:complexTypeExp}.
+\end{enumerate}
+
+\begin{figure}
+\centering
+\lstset{
+    language=xml,
+    tabsize=3,
+    %frame=lines,
+    frame=shadowbox,
+    rulesepcolor=\color{gray},
+    xleftmargin=20pt,
+    framexleftmargin=15pt,
+    keywordstyle=\color{blue}\bf,
+    commentstyle=\color{OliveGreen},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    basicstyle=\footnotesize,
+    emph={food,name,price},emphstyle={\color{magenta}}}
+    \lstinputlisting{images/simpleType.xml}
+\caption{Beispiel für \emph{simpleType}  
+}
+\label{fig:simpleTypeExp}
+\end{figure}
+
+\begin{figure}
+\centering
+\lstset{
+    language=xml,
+    tabsize=3,
+    %frame=lines,
+    frame=shadowbox,
+    rulesepcolor=\color{gray},
+    xleftmargin=20pt,
+    framexleftmargin=15pt,
+    keywordstyle=\color{blue}\bf,
+    commentstyle=\color{OliveGreen},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    basicstyle=\footnotesize,
+    emph={food,name,price},emphstyle={\color{magenta}}}
+    \lstinputlisting{images/complexType.xml}
+\caption{Beispiel für \emph{complexType}  
+}
+\label{fig:complexTypeExp}
+\end{figure}
 
 \section{Einschränkungen}
 
-\section{Vergleich DTD}
+\section{XML Schema 1.1}
+Mit der Version 1.1 des XML Schema sind einige wertvolle Neuerungen dazugekommen. Dazu zählt die Möglichkeit zur Definition von Geschäfts-Regeln. Dies ist ein sehr ähnlicher Funktionsumfang wie bei Schematron, mehr dazu in Kapitel  \ref{cha:Schematron}.
+Wie Walmsley \cite{Walmsley} erläutert können die dafür notwendigen Annotation direkt bei den jeweiligen Typen ergänzt werden.
+
+Als Beispiel dazu angeführt werden:
+\begin{enumerate}
+\item \textbf{assert}: Mithilfe von XPath-Ausdrücken (siehe Abschnitt \ref{sec:XPath}) können Bedingungen definiert werden, die zusätzlich die Gültigkeit des XML Elements überprüfen. Siehe Beispiel Xml-Datei \ref{fig:AssertExp}
+\item \textbf{alternative}: Mit \emph{alternative} kann man eine bedingte Typzuordnung realisieren. Dies ist sinnvoll, wenn zum Beispiel sich der Typ aufgrund eines Wertes in einem XML Attribut ergeben soll. Siehe Beispiel XML-Datei \ref{fig:AlternativeExp}
+\end{enumerate}
+
+\begin{figure}
+\centering
+\lstset{
+    language=xml,
+    tabsize=3,
+    %frame=lines,
+    frame=shadowbox,
+    rulesepcolor=\color{gray},
+    xleftmargin=20pt,
+    framexleftmargin=15pt,
+    keywordstyle=\color{blue}\bf,
+    commentstyle=\color{OliveGreen},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    basicstyle=\footnotesize,
+    emph={food,name,price},emphstyle={\color{magenta}}}
+    \lstinputlisting{images/assert.xml}
+\caption{Beispiel für \emph{assert}  
+}
+\label{fig:AssertExp}
+\end{figure}
+
+
+\begin{figure}
+\centering
+\lstset{
+    language=xml,
+    tabsize=3,
+    %frame=lines,
+    frame=shadowbox,
+    rulesepcolor=\color{gray},
+    xleftmargin=20pt,
+    framexleftmargin=15pt,
+    keywordstyle=\color{blue}\bf,
+    commentstyle=\color{OliveGreen},
+    stringstyle=\color{red},
+    numbers=left,
+    numberstyle=\tiny,
+    numbersep=5pt,
+    breaklines=true,
+    showstringspaces=false,
+    basicstyle=\footnotesize,
+    emph={food,name,price},emphstyle={\color{magenta}}}
+    \lstinputlisting{images/alternative.xml}
+\caption{Beispiel für \emph{alternative}  %%\cite{ArtikelExp}.
+}
+\label{fig:AlternativeExp}
+\end{figure}
+
+%\section{Vergleich DTD}

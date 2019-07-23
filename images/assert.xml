@@ -1,0 +1,7 @@
+<xs:complexType name="ProduktTyp">
+    <xs:sequence>
+        <xs:element name="laenge" type="xs:integer"/>
+        <xs:element name="breite" type="xs:integer"/>
+    </xs:sequence>
+    <xs:assert test="(laenge gt 100) and (laenge lt 200)"/>
+</xs:complexType>

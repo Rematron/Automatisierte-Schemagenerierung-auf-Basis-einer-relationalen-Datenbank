@@ -366,27 +366,27 @@ This work is published under the conditions of the
 %------------------ Betreuer-Seite -------------------
 
 \newcommand{\@babetreuerseite}{%
-\newpage
-\setcounter{page}{2}
-\thispagestyle{plain}
-\rule{0mm}{1mm}
-\begin{center}
-%
-\vspace{40mm} 
-{Diese Arbeit entstand im Rahmen des Gegenstands}\\
-\vspace{6mm} 
-{\Large\sf \@gegenstand\\ \mbox{}}\\
-\medskip
-im\\
-\bigskip
-{\@semester}\\
-%
-\vspace{45mm} 
-%{Betreuer:}\\
-{\@betreuerBez:}\\
-\vspace{3mm} 
-{\Large\sf \@betreuerName\\ \mbox{}}
-\end{center}
+% \newpage
+% \setcounter{page}{2}
+% \thispagestyle{plain}
+% \rule{0mm}{1mm}
+% \begin{center}
+% %
+% \vspace{40mm} 
+% {Diese Arbeit entstand im Rahmen des Gegenstands}\\
+% \vspace{6mm} 
+% {\Large\sf \@gegenstand\\ \mbox{}}\\
+% \medskip
+% im\\
+% \bigskip
+% {\@semester}\\
+% %
+% \vspace{45mm} 
+% %{Betreuer:}\\
+% {\@betreuerBez:}\\
+% \vspace{3mm} 
+% {\Large\sf \@betreuerName\\ \mbox{}}
+%\end{center}
 }
 
 %% -------------- Erklaerung / Declaration ---------

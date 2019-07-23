@@ -1,14 +1,21 @@
 \chapter{XML Schematron}
 \label{cha:Schematron}
+Schematron ist eine Sprache zur Validierung von XML Dokumenten. Sie wurde 1999 von Rick Jeliffe entwickelt.
 
 \section{Vorteile}
-Mit Schematron ist es möglich auch Geschäftslogik in der XML-Datei abzubilden.
-Im Vergleich dazu war es ja im XML Schema nur möglich auf Datentypen, Bereichswerte oder z.B. auf Referenzelemente zu überprüfen.
+Mit Schematron ist es möglich, auch Geschäftslogik in einer XML-Datei abzubilden. Wie Lee \cite{Lee2000ComparativeAO} aufzeigt, bietet Schematron einen sehr großes Funktionsumfang der sehr präzise und kompakt definiert werden kann.
+Im Vergleich dazu ist es im XML Schema 1.0 nur möglich auf Datentypen, Bereichswerte oder z.B. auf Referenz-Elemente zu überprüfen.
 
 \section{Funktionsweise}
+Beim Schematron können mehrere 'Business-Rules' definiert werden. Diese spiegeln Regeln wieder die den XML-Baum filtern und überprüfen können. Das dafür definierte XML-Element ist 'rule'. Dabei wird zuerst über einen XPath-Ausdruck der XML-Baum gefiltert. Danach kann auf diesen XML-Elementen über das 'assert'-Element Testfälle abgefragt werden. Entspricht ein XML-Element dem 'assert' Testfall, so wird dazu zugehörige Fehlermeldung dem Benutzer geliefert.
+Zu Beachten ist, dass die Filterung der 'rule'-Elemente sich aggregieren und deswegen der Datenbereich immer kleiner wird.
+Um wieder vom kompletten XML-Baum zu filtern, muss eine erneute 'Business-Rule' in einem 'pattern'-Element eingeschlossen werden. Mehr dazu in \cite{Montero2011} Kapitel 5.
+
 
 \section{XPath}
+\label{sec:XPath}
+XPath ist eine Sprache zur Filterung von XML-Dokumenten. Wie in \cite{Kay2011} beschrieben, wird dabei das XML-Dokument in einer Baumstruktur betrachtet. Jedes XML-Element entspricht einer weiteren Verschachtelung innerhalb des Baumes. Mithilfe von definierten Befehlen kann dann in diesem Baum navigiert und gefiltert werden. XPath ist dabei eine mächtige Sprache und unterstützt eine Vielzahl an Funktionen zur Aggregierung, Quantifizierung und Vergleich der Datenelementen. 
 
 
 \section{Validierung}
-Da das Schematron ISO standardisiert ist, gibt es die Möglichkeit diese in bestehende Strukturen einzugliedern. Wie in \cite{Akhilesh_validatinga} dargestellt, ist es möglich über die XML Elemente \emph{annotation} und \emph{appinfo} die Schematron-Elemente direkt im XML Schema einzubinden.
+Da das Schematron mit ISO/IEC 19757-3: \cite{ISO_IEC19757} standardisiert ist, gibt es die Möglichkeit diese in bestehende Strukturen einzugliedern. Wie in \cite{Akhilesh_validatinga} dargestellt, ist es möglich über die XML Elemente \emph{annotation} und \emph{appinfo} die Schematron-Elemente direkt im XML Schema einzubinden.

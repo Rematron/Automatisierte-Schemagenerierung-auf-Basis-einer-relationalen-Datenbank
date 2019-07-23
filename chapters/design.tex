@@ -1,0 +1,28 @@
+\chapter{Design}
+\label{cha:Design}
+Nun soll beschrieben werden, welche logischen Schritte notwendig sind, um aus Basis einer Datenmenge ein XML Schema zu Validierung generieren zu können.
+
+\section{Analyse der Daten}
+Jeder Datensatz der Definition gehört auf mehrere Aspekte untersucht.
+Die wichtigsten davon sind:
+
+\begin{enumerate}
+\item \textbf{Namen}: Bestimmen welche Bezeichnung das Element erhält.
+\item \textbf{Datentyp}: Kann der Datentyp über einen vordefinierten Typen beschrieben werden, oder muss ein eigener komplexer Datentyp definiert werden. 
+\item \textbf{Rekursion}: Bestimmen ob das Element aus weiteren Kind-Elementen besteht. 
+\end{enumerate}
+
+\section{Beschreibung des Aufbaus}
+Jedes valide XML Dokument besteht aus einem Mindestanzahl an vorgeschriebenen Beschreibung die definiert gehören.
+Für eine Schema-Datei zur Validierung ist dabei notwendig:
+
+\begin{enumerate}
+\item \textbf{XML Header}: Definition der Version und des Encoding.
+\item \textbf{Namensraum-Definition}: Definiert die verwendeten Namensräume im Element und den Namensraum für die definierten Typen in dem Schema.
+\item \textbf{Basis-Element}: Das Hauptelement beinhaltet nur ein Element und definiert jeden einzelne Schnittstelle. Dies wurde von \BMD vorgeschrieben.
+\item \textbf{Definition der Schnittstelle}: Beinhaltet die einzelnen definierten Typen und beschreibt ihren Aufbau. Diese können auch weitere Kind-Elemente definieren.
+\end{enumerate}
+
+\section{Plausibilität der Daten}
+Nachdem der Aufbau der zu übermittelten XML-Dateien durch das XML-Schema definiert wurde, folgt am Ende die Beschreibung des Schematron zur Überprüfung der Plausibilität.
+Dieses werden am Ende des Dokuments angefügt. Da die Regeln jedoch nicht in der Datenmenge hinterlegt sind, müssen diese für jede Schnittstelle manuell definiert werden.
