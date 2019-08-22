@@ -9,6 +9,7 @@
 
 \usepackage[utf8]{inputenc}		% Bei der Verw. von lualatex oder xelatex entfernen!
 \usepackage{pdfpages}
+\usepackage{geometry}
 
 \graphicspath{{images/}}    % Abbildungsverzeichnis
 \logofile{logo}				% Name des Logo-PDFs in images/ (\logofile{}, wenn kein Logo gewünscht)
@@ -38,7 +39,6 @@
 %%%----------------------------------------------------------
 \begin{document}
 %%%----------------------------------------------------------
-
 %%%----------------------------------------------------------
 \frontmatter                    % Titelei (röm. Seitenzahlen)
 %%%----------------------------------------------------------
@@ -46,6 +46,8 @@
 \includepdf[pages={1-}]{Titelblatt}
 % \maketitle
 \tableofcontents
+\listoffigures                          % Abbildungsverzeichnis
+
 
 %%\include{front/vorwort} % Optional. Ggf. weglassen
 \include{front/kurzfassung}		
@@ -57,8 +59,6 @@
 
 \include{chapters/einleitung}
 \include{chapters/technikstand}
-\include{chapters/schema}
-\include{chapters/schematron}
 \include{chapters/design}
 \include{chapters/bmd}
 \include{chapters/implementierung}
@@ -73,13 +73,13 @@
 %%\include{chapters/drucken}
 
 %%%----------------------------------------------------------
+\MakeBibliography                        % Quellenverzeichnis
+%%%----------------------------------------------------------
+
+%%%----------------------------------------------------------
 \appendix                                            % Anhang 
 %%%----------------------------------------------------------
 \include{back/anhang}	% Quelltext dieses Dokuments
-
-%%%----------------------------------------------------------
-\MakeBibliography                        % Quellenverzeichnis
-%%%----------------------------------------------------------
 
 %%% Messbox zur Druckkontrolle ------------------------------
 % \include{back/messbox}

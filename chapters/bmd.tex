@@ -1,8 +1,10 @@
-\chapter{Aufbau BMD}
-\label{cha:Bmd}
+\chapter{Testumgebung}
+\label{cha:Testumgebung}
 
 \BMD bietet eine Enterprise Resource Planning(ERP)-Gesamtlösung an. Ein Teil davon ist das Modul Produktionsplanungs- und Steuerungssystem (PPS), für das die Umsetzung dieser Bachelorarbeit gedacht ist.
 Als ERP-Lösungsanbieter ist speziell die Individualisierung für den Kunden von Bedeutung. Oft wird nicht das gesamte System beim Kunden von einen Anbieter realisiert. Aus diesem Grund ist es wichtig, standardisierte Schnittstellen anzubieten, die dennoch leicht an die Anforderungen des jeweiligen Partners angepasst werden können. Im Modul der PPS hat sich BMD dazu entschieden, dies mittels einer XML-Schnittstelle zu realisieren.
+
+
 
 \section{PPS-Service}
 Der PPS-Service  ist ein Windows-Service, der beim Kunden installiert werden kann. Der Service wird über eine .ini-Datei konfiguriert. Auch muss die gewählte Kommunikation in der NTCS definiert werden. Als Möglichkeiten bieten sich ein Datenaustausch über ein Netzwerklaufwerk und/oder die direkte Kommunikation über TCP/IP an. Für TCP/IP gibt es ein definiertes Befehlsprotokoll, das von der externen Seite unterstützt werden muss.
@@ -39,7 +41,7 @@ Beispiele für Stammdaten sind verwaltete Artikel und Stücklisten. Sie repräse
 
 
 \section{Bewegungsdaten}
-In der Produktion entstehen viele Bewegungsdaten. Dies beginnt bereits bei der Planung der einzelnen Aufträge und endet bei den gelieferten Produkten. Als Beispiel können so von einem automatisierten Produktionsarbeitsplatz gefertigte Produkte an BMD rückgemeldet werden, siehe dazu Datei \ref{fig:ProduktImp}. 
+In der Produktion entstehen viele Bewegungsdaten. Dies beginnt bereits bei der Planung der einzelnen Aufträge und endet bei den gelieferten Produkten. Als Beispiel können so von einem automatisierten Produktionsarbeitsplatz gefertigte Produkte an BMD zurückgemeldet werden, siehe dazu Datei \ref{fig:ProduktImp}. 
 
 \begin{figure}
 \centering
