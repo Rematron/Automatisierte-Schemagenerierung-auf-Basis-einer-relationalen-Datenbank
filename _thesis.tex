@@ -46,7 +46,6 @@
 \includepdf[pages={1-}]{Titelblatt}
 % \maketitle
 \tableofcontents
-\listoffigures                          % Abbildungsverzeichnis
 
 
 %%\include{front/vorwort} % Optional. Ggf. weglassen
@@ -59,8 +58,8 @@
 
 \include{chapters/einleitung}
 \include{chapters/technikstand}
-\include{chapters/design}
 \include{chapters/bmd}
+\include{chapters/design}
 \include{chapters/implementierung}
 \include{chapters/ergebnisse}
 \include{chapters/schluss}
@@ -75,6 +74,9 @@
 %%%----------------------------------------------------------
 \MakeBibliography                        % Quellenverzeichnis
 %%%----------------------------------------------------------
+
+\listoffigures                          % Abbildungsverzeichnis
+\listof{program}{Programverzeichnis}
 
 %%%----------------------------------------------------------
 \appendix                                            % Anhang 

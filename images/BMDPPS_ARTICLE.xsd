@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema targetNamespace="https://www.bmd.com/module/pps-cam-maschinen-und-leitstandanbindung.html" elementFormDefault="qualified" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns="https://www.bmd.com/module/pps-cam-maschinen-und-leitstandanbindung.html" xmlns:sch="http://www.ascc.net/xml/schematron">
+	<xsd:element name="MAIN" type="MAIN_TYPE"/>
+	<xsd:complexType name="MAIN_TYPE">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="ARTICLE" type="ARTICLE_TYPE"/>
+		</xsd:choice>
+	</xsd:complexType>
+	<xsd:complexType name="ARTICLE_TYPE">
+		<xsd:choice minOccurs="0" maxOccurs="unbounded">
+			<xsd:element name="ARTICLE_COMPANY_NO" type="xsd:decimal" minOccurs="0"/>
+			<xsd:element name="ARTICLE_NO" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="UNIT" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ARTICLE_DESC" type="xsd:string" minOccurs="0"/>
+			<xsd:element name="ARTICLE_DESC_SHORT" type="xsd:string" minOccurs="0"/>
+		</xsd:choice>
+		<xsd:attribute name="ACTION" use="required">
+			<xsd:simpleType>
+				<xsd:restriction base="xsd:string">
+					<xsd:pattern value="NEW|CREATE|MODIFY|DELETE"/>
+				</xsd:restriction>
+			</xsd:simpleType>
+		</xsd:attribute>
+		<xsd:attribute name="GENERATE_ARTICLENO" type="xsd:boolean"/>
+		<xsd:attribute name="COPY_PIECELIST" type="xsd:boolean"/>
+		<xsd:attribute name="COPY_SUPPLIER_REGISTRY" type="xsd:boolean"/>
+		<xsd:attribute name="COPY_ARTICLE" type="xsd:string"/>
+	</xsd:complexType>
+	<xsd:annotation>
+		<xsd:appinfo>
+			<sch:pattern sch:name="Check ArtikelNr">
+				<sch:pattern sch:context="//ARTICLE[@GENERATE_ARTICLENO='true']">
+					<sch:assert sch:test="not(boolean(./ARTICLE_NO/text()))">Wenn Attribut GENERATE_ARTICLENO=true ist, darf keine ArtikelNr gesetzt sein</sch:assert>
+				</sch:pattern>
+			</sch:pattern>
+		</xsd:appinfo>
+	</xsd:annotation>
+</xsd:schema>

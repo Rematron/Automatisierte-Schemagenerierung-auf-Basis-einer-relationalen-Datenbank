@@ -1,19 +1,3 @@
-function TBMDPpsXmlValidationGenerator.GetXmlSchema(uFileName, uAttrSelName: String; uAttrSel: TBMDMDAttrSelection): TBMDXMLDOMDocument;
-begin
-  lResult := CreatePpsSchemaDoc(lSchemaDoc, lRootNode);
-  lResult := lResult and AddMainNode(lSchemaDoc, lRootNode, uAttrSelName);
-  lResult := lResult and AddComplexType( lSchemaDoc, lRootNode, uAttrSelName, uAttrSel );
-  lResult := lResult and AddSchematronForAttrSel( lSchemaDoc, lRootNode, uAttrSel);
-  if lResult then Result := lSchemaDoc;
-end;
-
-
-//---------------------------------------------
-// The main node is required in every import/export and is not defined in the selection
-//---------------------------------------------
-function TBMDPpsXmlValidationGenerator.AddMainNode(uDoc: TBMDXMLDOMDocument; uParentNode: IXMLDOMNode; uName: string): Boolean;
-...............
-
 //---------------------------------------------
 // Adds a new complex-type element in the XML-Schema file
 //---------------------------------------------

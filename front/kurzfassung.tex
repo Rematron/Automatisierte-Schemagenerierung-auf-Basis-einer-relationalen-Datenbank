@@ -1,7 +1,13 @@
 \chapter{Kurzfassung}
 
-Bei der Einführung einer neuen Software in einem System gibt es oft den Wunsch bestehende Daten von einem fremden System zu übernehmen oder diesem System Daten zu liefern. Dies kann und wird sehr oft über den Austausch von XML-Dateien realisiert. Mit einem XML-Schema können solche Dateien überprüft und validiert werden.
+Bei der Einführung einer neuen Software in einem System gibt es oft den Wunsch bestehende Daten von einer fremden Softwarelösung zu übernehmen, oder dieser Software Daten zu liefern. Etabliert hat sich hier der Austausch von XML-Dateien. Mit einem XML-Schema können solche Dateien überprüft und validiert werden.
 
-Um nun nicht jede Änderung einer Schnittstelle auch im Schema mit pflegen zu müssen, sollte dies möglichst automatisiert werden. In dieser Arbeit soll nun gezeigt werden, welche Schritte notwendig sind, um ein XML-Schema aus einer relationaler Datenbasis generieren zu können. 
-Auch soll eine Möglichkeit zur erweiterten Validierung der XML-Dateien angeboten werden. 
-In der Praxis wurde ein Prototyp bei \BMD implementiert, der dem Entwickler die Anpassung der Schnittstellen erleichtern soll.
+Um nun nicht jede Änderung einer Schnittstelle auch im Schema mit pflegen zu müssen, sollte dies möglichst automatisiert werden. 
+In dieser Arbeit soll gezeigt werden, welche Schritte notwendig sind, um ein XML-Schema aus einer relationaler Datenbasis generieren zu können. 
+Es erfolgt eine Analyse von bestehenden Lösungen in diesem Bereich. 
+Für die Umsetzung eines Prototypen für die Firma \BMD wird ein Konzept entwickelt. Dabei wird kurz der bestehende Kommunikationsablauf bei BMD erläutert. Danach wird im Konzept das System um eine semi-automatische Generierung der XML Schemata erweitert. Auch wurde im Konzept die Erweiterung der Validierung mithilfe eines Schematron vorgesehen. Damit können auch komplexere Regeln, die kontextabhängig sind, realisiert werden.
+
+In der Evaluation des Prototypen zeigt sich, dass die Umsetzung ohne fremde Softwarekomponenten realisiert werden konnte. Auch wurden einfache Validierungsregeln für den Schematron implementiert. Die Generierung der XML Schemata erfolgt aufgrund von Definition einer Schnittstelle, in einer relationalen Datenbank. Die Umsetzung erfordert hier keine Anpassungen, bei Änderungen der Schnittstellen.
+
+Die Generierung der XML Schema kann für interne und externe Schnittstellen erfolgen. Jedoch wird derzeit die Validierung mithilfe der XML Schema nur intern verwendet.
+Der Schemagenerator wird in Zuge von neuen Kundeninstallationen eingeführt. Die Schematron-Regeln können nicht automatisch erweitert werden. Diese müssen manuell nach gepflegt werden.

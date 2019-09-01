@@ -34,10 +34,3 @@ begin
     end;
   end;      
 end;
-
-//------------------------------------------------
-// Converts an BMD-Attribute (an element which respresents a XML-Attribute or XML-Element)
-//  to the according XML-Typ
-//------------------------------------------------
-function TBMDPpsXmlValidationGenerator.GetElementTypFromAttribute( uAttribute: TBMDAttribute ): String;
-...............

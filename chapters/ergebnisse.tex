@@ -1,11 +1,21 @@
 \chapter{Ergebnisse}
 \label{cha:Ergebnisse}
-
-\section{Diskussion}
-Mit dem fertigen Implementierung ist es nun möglich, XML-Dokumente aufgrund von bereits bestehenden Schnittstellendefintionen zu validieren. Dies bringt besonders einen Mehrwert bei der Einführung von neuen Feldern, da die grundsätzlichen Überprüfungen nicht mehr notwendig sind. 
-Auch können die XML Schemata an Fremdsysteme weitergegeben, um eine Abstimmung vor einer Systemeinführung sicher zu stellen.
-Mithilfe von Schematron ist es außerdem möglich, kontextabhängige Regeln zu definieren. Leider ist aber derzeit bei BMD noch eine veraltete Microsoft-Komponente zum XML-Validierung im Einsatz. Damit ist eine Validierung mit Schematron im System nicht automatisch realisierbar.
-
+Betrachtet man den entwickelten Prototypen, soll geprüft werden, ob das eingesetzte Konzept auch erfolgreich umgesetzt werden konnte. Auch werden Vorteile und Nachteile der Umsetzung aufgezeigt.
 
 \section{Evaluation}
-Hier kommt die Evaluation hin...
+Der Prototyp wurde bereits komplett in die Infrastruktur der bestehenden ERP-Software eingebaut.
+Damit muss keine explizite Auslieferung der Software mehr erfolgen. 
+Sämtliche Funktionen des Prototypen konnten ohne neue Bibliotheken umgesetzt werden. 
+
+Die Definition der Datentypen innerhalb des XML Schema ist derzeit noch rudimentär. Hier würde das XML Schema weitere Funktionen anbieten, um die Validierung genauer zu definieren. Bei BMD werden diese Informationen jedoch derzeit nicht in den Schnittstellen definiert.
+
+Wenn eine neue Geschäftsregel in einer Schnittstelle eingeführt wird, muss die Regel für den Schematron derzeit manuell im Programmcode nach gepflegt werden. Hier wäre eine Vereinheitlichung der Implementierungen noch sinnvoll.
+
+
+
+
+\section{Diskussion}
+Mit der fertigen Implementierung ist es möglich, XML-Dokumente aufgrund von bereits bestehenden Definitionen von Schnittstellen zu validieren. Dies bringt besonders einen Mehrwert bei der Einführung von neuen Feldern in Schnittstellen, da die grundsätzlichen Überprüfungen nicht mehr notwendig sind. 
+Auch können die XML Schemata an Fremdsysteme weitergegeben werden, um eine Abstimmung vor einer Systemeinführung sicher zu stellen.
+
+Mithilfe eines Schematrons ist es außerdem möglich, kontextabhängige Regeln zu definieren. Derzeit ist bei BMD noch eine veraltete Microsoft-Komponente zur Validierung der XML-Dokumente im Einsatz. Damit ist eine Validierung mit Schematron im System nicht automatisch realisierbar. Im Konzept wurde dies jedoch bereits vorgesehen.

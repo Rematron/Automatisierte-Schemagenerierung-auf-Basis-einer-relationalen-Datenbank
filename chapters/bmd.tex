@@ -1,8 +1,8 @@
 \chapter{Testumgebung}
 \label{cha:Testumgebung}
 
-\BMD bietet eine Enterprise Resource Planning(ERP)-Gesamtlösung an. Ein Teil davon ist das Modul Produktionsplanungs- und Steuerungssystem (PPS), für das die Umsetzung dieser Bachelorarbeit gedacht ist.
-Als ERP-Lösungsanbieter ist speziell die Individualisierung für den Kunden von Bedeutung. Oft wird nicht das gesamte System beim Kunden von einen Anbieter realisiert. Aus diesem Grund ist es wichtig, standardisierte Schnittstellen anzubieten, die dennoch leicht an die Anforderungen des jeweiligen Partners angepasst werden können. Im Modul der PPS hat sich BMD dazu entschieden, dies mittels einer XML-Schnittstelle zu realisieren.
+\BMD bietet eine Enterprise Resource Planning (ERP)-Gesamtlösung an. Ein Teil davon ist das Modul Produktionsplanungs- und Steuerungssystem (PPS), anhand dessen die Umsetzung des Prototyps evaluiert werden soll.
+Als ERP-Lösungs\-anbieter ist speziell die Individualisierung für den Kunden von Bedeutung. Oft wird nicht das gesamte System beim Kunden von einen Anbieter realisiert. Aus diesem Grund ist es wichtig, standardisierte Schnittstellen anzubieten, die dennoch leicht an die Anforderungen des jeweiligen Partners angepasst werden können. Im Modul der PPS hat sich BMD dazu entschieden, dies mittels einer XML-Schnittstelle zu realisieren.
 
 
 
@@ -11,9 +11,10 @@ Der PPS-Service  ist ein Windows-Service, der beim Kunden installiert werden kan
 Genutzt wird diese Schnittstelle zum Austausch von Informationen in beiden Seiten. Das bedeutet das damit die Möglichkeit zum Export und Import von Stammdaten als auch Bewegungsdaten besteht. Somit können auch Maschinen und Leitstände angebunden werden. 
 
 \section{Stammdaten}
-Beispiele für Stammdaten sind verwaltete Artikel und Stücklisten. Sie repräsentieren echte Artikel, die im Betrieb gelagert, verkauft oder produziert werden und deren Zusammensetzung. Die jeweiligen Eigenschaften der Artikel können dann über eine XML-Datei importiert oder exportiert werden, siehe dazu Datei \ref{fig:ArtikelExp}
+Beispiele für Stammdaten sind verwaltete Artikel und Stücklisten. Sie repräsentieren echte Artikel, die im Betrieb gelagert, verkauft oder produziert werden und deren Zusammensetzung. Die jeweiligen Eigenschaften der Artikel können dann über eine XML-Datei importiert oder exportiert werden, siehe dazu Programmcode \ref{fig:ArtikelExp}
 
-\begin{figure}
+
+\begin{program}
 \centering
 \lstset{
     language=xml,
@@ -34,16 +35,16 @@ Beispiele für Stammdaten sind verwaltete Artikel und Stücklisten. Sie repräse
     basicstyle=\footnotesize,
     emph={food,name,price},emphstyle={\color{magenta}}}
     \lstinputlisting{images/artikel_export.xml}
-\caption{Beispiel für Exportdatei: Artikel.xml  %%\cite{ArtikelExp}.
+\caption{Beispiel für Exportdatei: Artikel.xml
 }
 \label{fig:ArtikelExp}
-\end{figure}
+\end{program}
 
 
 \section{Bewegungsdaten}
-In der Produktion entstehen viele Bewegungsdaten. Dies beginnt bereits bei der Planung der einzelnen Aufträge und endet bei den gelieferten Produkten. Als Beispiel können so von einem automatisierten Produktionsarbeitsplatz gefertigte Produkte an BMD zurückgemeldet werden, siehe dazu Datei \ref{fig:ProduktImp}. 
+In der Produktion entstehen viele Bewegungsdaten. Dies beginnt bereits bei der Planung der einzelnen Aufträge und endet bei den gelieferten Produkten. Als Beispiel können so von einem automatisierten Produktionsarbeitsplatz gefertigte Produkte an BMD zurückgemeldet werden, siehe dazu Programmcode \ref{fig:ProduktImp}. 
 
-\begin{figure}
+\begin{program}
 \centering
 \lstset{
     language=xml,
@@ -63,17 +64,18 @@ In der Produktion entstehen viele Bewegungsdaten. Dies beginnt bereits bei der P
     showstringspaces=false,
     basicstyle=\footnotesize,
     emph={food,name,price},emphstyle={\color{magenta}}}
-    \lstinputlisting{images/produkt_import.xml}
-\caption{Beispiel für Importdatei: Produkt.xml }
+    \lstinputlisting{images/artikel_export.xml}
+\caption{Beispiel für Importdatei: Produkt.xml
+}
 \label{fig:ProduktImp}
-\end{figure}
+\end{program}
 
 \begin{figure}
     \centering
-    \includegraphics[width=.95\textwidth]{images/Systemschema.png}
+    \includegraphics[width=.95\textwidth]{images/Systemschema_black.png}
     \caption{Arbeitsablauf CAM-Interface}
     \label{fig:Arbeitsablauf}
 \end{figure}
 
 \section{Beispiel Kommunikationsablauf}
-Ein möglicher Arbeitsablauf beim BMD, wie man in Abbildung \ref{fig:Arbeitsablauf} sieht, kann dann so sein, dass die Stammdaten in BMD gewartet werden. Diese werden anschließend exportiert und vom Fremdsystem eingelesen. Das Fremdsystem erfasst dann die erzeugten Produkte vom Kunden und liefert diese anschließend wieder über eine Exportdatei an BMD. 
+Ein möglicher Arbeitsablauf beim BMD, sieht man in Abbildung \ref{fig:Arbeitsablauf}. Die Stammdaten werden in BMD gewartet. Diese werden anschließend exportiert und vom Fremdsystem eingelesen. Das Fremdsystem erfasst die erzeugten Produkte vom Kunden und liefert diese anschließend wieder über eine Exportdatei an BMD. 

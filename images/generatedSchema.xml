@@ -1,0 +1,28 @@
+<xsd:schema targetNamespace="urn:schemas-microsoft-com:sql:SqlRowSet2" 
+    xmlns:schema="urn:schemas-microsoft-com:sql:SqlRowSet2"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+    xmlns:sqltypes="http://schemas.microsoft.com/sqlserver/2004/sqltypes" 
+    elementFormDefault="qualified">
+  <xsd:import namespace="http://schemas.microsoft.com/sqlserver/2004/sqltypes" schemaLocation="http://schemas.microsoft.com/sqlserver/2004/sqltypes/sqltypes.xsd" />
+  <xsd:element name="PRODUKT">
+    <xsd:complexType>
+      <xsd:sequence>
+        <xsd:element name="ARTIKELNR" minOccurs="0">
+          <xsd:simpleType sqltypes:sqlTypeAlias="[A50]">
+            <xsd:restriction base="sqltypes:nvarchar" sqltypes:localeId="1033" sqltypes:sqlCompareOptions="IgnoreCase IgnoreKanaType IgnoreWidth">
+              <xsd:maxLength value="50" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+        <xsd:element name="QTY" minOccurs="0">
+          <xsd:simpleType>
+            <xsd:restriction base="sqltypes:numeric">
+              <xsd:totalDigits value="24" />
+              <xsd:fractionDigits value="9" />
+            </xsd:restriction>
+          </xsd:simpleType>
+        </xsd:element>
+      </xsd:sequence>
+    </xsd:complexType>
+  </xsd:element>
+</xsd:schema>

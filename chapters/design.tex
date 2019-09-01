@@ -1,6 +1,6 @@
 \chapter{Konzeption}
 \label{cha:Konzeption}
-Nun soll beschrieben werden, welche logischen Schritte notwendig sind, um aus Basis einer Datenmenge ein XML Schema zu Validierung generieren zu können.
+Für die Erstellung eines Prototyps muss nun untersucht werden, welche logischen Schritte notwendig sind, um auf Basis einer bestehenden Datenmenge ein XML Schema zur Validierung zu generieren. 
 
 \section{Analyse der Daten}
 Jeder Datensatz der Definition gehört auf mehrere Aspekte untersucht.
@@ -9,12 +9,12 @@ Die wichtigsten davon sind:
 \begin{enumerate}
 \item \textbf{Namen}: Bestimmen welche Bezeichnung das Element erhält.
 \item \textbf{Datentyp}: Kann der Datentyp über einen vordefinierten Typen beschrieben werden, oder muss ein eigener komplexer Datentyp definiert werden. 
-\item \textbf{Rekursion}: Bestimmen ob das Element aus weiteren Kind-Elementen besteht. 
+\item \textbf{Weitere Elemente}: Bestimmen ob das Element aus weiteren Kind-Elementen besteht. Dies kann auch rekursiv auftreten.
 \end{enumerate}
 
 \section{Beschreibung des Aufbaus}
-Jedes valide XML Dokument besteht aus einem Mindestanzahl an vorgeschriebenen Beschreibung die definiert gehören.
-Für eine Schema-Datei zur Validierung ist dabei notwendig:
+Jedes valide XML Dokument besteht aus einer Mindestanzahl an vorgeschriebenen Beschreibungen, die definiert werden.
+Für eine Schema-Datei zur Validierung ist folgendes zu beachten:
 
 \begin{enumerate}
 \item \textbf{XML Header}: Definition der Version und des Encoding.
@@ -25,4 +25,4 @@ Für eine Schema-Datei zur Validierung ist dabei notwendig:
 
 \section{Plausibilität der Daten}
 Nachdem der Aufbau der zu übermittelten XML-Dateien durch das XML-Schema definiert wurde, folgt am Ende die Beschreibung des Schematron zur Überprüfung der Plausibilität.
-Dieses werden am Ende des Dokuments angefügt. Da die Regeln jedoch nicht in der Datenmenge hinterlegt sind, müssen diese für jede Schnittstelle manuell definiert werden.
+Die notwendigen Annotationen werden am Ende des Dokuments angefügt. Da die Regeln jedoch nicht in der Datenmenge hinterlegt sind, müssen diese für jede Schnittstelle manuell definiert werden.

@@ -1,0 +1,17 @@
+<ClinicalDocument >
+    <!-- CDA Header -->
+    <component>
+        <structuredBody>
+            <component>
+                <section>
+                    <title>
+                        Bericht
+                    </title>
+                    <text>
+                        .......
+                    </text>
+                </section>    
+            </component>
+        </structuredBody>
+    </component>
+</ClinicalDocument>

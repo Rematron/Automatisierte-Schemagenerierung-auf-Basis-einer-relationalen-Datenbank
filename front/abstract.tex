@@ -1,10 +1,17 @@
 \chapter{Abstract}
 
 \begin{english} %switch to English language rules
-When introducing new software in a system, there is often a desire to take over existing data from a foreign system or to provide data to this system. This can and often is realized through the exchange of XML files. With an XML schema such files can be checked and validated.
+When introducing a new software in a system, there is often a desire to import existing data from a third-party software solution or to supply data to this software. Established here is the exchange of XML files. With an XML schema such files can be checked and validated.
 
-So as not to have to maintain every change of an interface in the schema, this should be automated as far as possible. In this thesis I want to show what steps are necessary to generate an XML schema from a relational database.
-Also a possibility for the extended validation of the XML files is to be offered.
-In practice, a prototype has been implemented at \BMD, which should make it easier for the developer to adapt the interfaces.
+To prevent maintenance of every change of an interface in the schema, this should be automated as far as possible.
+This thesis shows which steps are necessary to automatically generate an XML schema from a relational database.
+An analysis of existing solutions in this area is carried out.
+For the implementation of a prototype for the company \BMD a concept is developed. The thesis briefly explains the existing communication process at BMD. Then the concept is extended by a semi-automatic generation of the XML schemas. Also included in the concept was the extension of validation using a Schematron. This allows even more complex rules, that are context-dependent, to be realized.
+
+The evaluation of the prototype shows that the implementation could be realized without external software components. Also, simple validation rules have been implemented for the Schematron. The XML schemas are generated based on an interface definition in a relational database. The implementation does not require any adjustments here, if the interfaces are changed.
+
+
+The generation of the XML Schema can be done for internal and external interfaces. However, validation using the XML Schema is currently only used internally.
+The generator is being introduced as part of new customer installations. The Schematron rules can not be automatically extended. These must be maintained manually.
 %und hier geht dann das Abstract weiter...
 \end{english}

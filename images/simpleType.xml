@@ -1,6 +1,6 @@
 <simpleType name="FarbeTyp">
     <restriction base="string">
-        <enumetration value="Blau"/>
-        <enumetration value="Rot"/>
+        <enumeration value="Blau"/>
+        <enumeration value="Rot"/>
     </restriction>
 </simpleType>
